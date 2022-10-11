@@ -2,7 +2,7 @@
   padding: 0;
   margin:0 ;
   display: flex;
-  justify-content:end;
+  justify-content:flex-end;
     background-color: gray;
 }
 .Navul li{
@@ -13,6 +13,26 @@
 .Navul li a{
   color: aliceblue;
   text-decoration: none;
+}
+.signup{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.inputBox{
+display: block;
+padding: 10px;
+margin: 10px;
+width: 250px;
+border: 1px solid #282c34;
+} 
+.signup button{
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  background-color:#61dafb;
+  border: 1px solid gray;
+  cursor: pointer;
 }
 .footer{
   position: absolute;

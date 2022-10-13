@@ -14,10 +14,11 @@
   color: aliceblue;
   text-decoration: none;
 }
-.signup{
+.signup,.login{
  display: flex;
  flex-direction: column;
  align-items: center;
+ margin-top: 100px;
 }
 .inputBox{
 display: block;
@@ -26,7 +27,7 @@ margin: 10px;
 width: 250px;
 border: 1px solid #282c34;
 } 
-.signup button{
+.signup button, .login button{
   width: 100px;
   height: 40px;
   border-radius: 10px;
@@ -34,6 +35,7 @@ border: 1px solid #282c34;
   border: 1px solid gray;
   cursor: pointer;
 }
+
 .footer{
   position: absolute;
   bottom: 0;

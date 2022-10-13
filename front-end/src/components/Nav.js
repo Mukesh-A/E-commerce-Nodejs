@@ -9,31 +9,37 @@ const Nav = () => {
   };
   return (
     <div>
-      <ul className="Navul">
-        <li>
-          <Link to="/">Products</Link>
-        </li>
-        <li>
-          <Link to="/add">Add Products</Link>
-        </li>
-        <li>
-          <Link to="/update">Update Products</Link>
-        </li>
-
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
-        {auth ? (
+      {auth ? (
+        <ul className="Navul">
           <li>
-            <Link onClick={logout} to="/signup">LogOut</Link>
+            <Link to="/">Products</Link>
           </li>
-        ) : (
           <li>
-            {" "}
+            <Link to="/add">Add Products</Link>
+          </li>
+          <li>
+            <Link to="/update">Update Products</Link>
+          </li>
+
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
+          <li>
+            <Link onClick={logout} to="/signup">
+              LogOut({JSON.parse(auth).name})
+            </Link>
+          </li>
+        </ul>
+      ) : (
+        <ul className="Navul">
+          <li>
             <Link to="/signup">Signup</Link>
           </li>
-        )}
-      </ul>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </ul>
+      )}
     </div>
   );
 };

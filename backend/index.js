@@ -28,9 +28,18 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.post("/add-product", async(req,res)=>{
+app.post("/add-product", async (req, res) => {
   let product = new Product(req.body);
   let result = await product.save();
-  res.send(result)
-})
+  res.send(result);
+});
+
+app.get("/products", async (req, res) => {
+  let products = await Product.find();
+  if (products.length > 0) {
+    res.send(products);
+  } else {
+    res.send({ result: "No Products Found" });
+  }
+});
 app.listen(5000);

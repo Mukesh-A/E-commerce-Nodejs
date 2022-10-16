@@ -34,11 +34,27 @@ border: 1px solid #282c34;
   background-color:#61dafb;
   border: 1px solid gray;
   cursor: pointer;
-}
+} 
 
 .addProducts span{
   color: red;
   margin-left: -180px;
+}
+
+.products-list{
+  text-align: center;
+  margin-top:50px ;
+ 
+}
+.products-list ul{
+  margin: 0; 
+ }
+.products-list ul li{
+  display: inline-block;
+  padding: 5px;
+  width: 150px;
+  border: 1px solid gray;
+  color: #282c34;
 }
 
 .footer{

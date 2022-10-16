@@ -6,6 +6,8 @@ import SignUp from "./SignUp";
 import PrivateComponent from "./components/PrivateComponents";
 import Login from "./components/Login";
 import AddProduct from "./components/AddProduct";
+import ProductList from "./components/ProductList";
+import UpdateProduct from "./components/UpdateProduct";
 function App() {
   return (
     <div className="App">
@@ -13,9 +15,9 @@ function App() {
         <Nav />
         <Routes>
           <Route element={<PrivateComponent />}>
-            <Route path="/" element={<h1>Products Listing COMPONENS</h1>} />
+            <Route path="/" element={<ProductList />} />
             <Route path="/add" element={<AddProduct />} />
-            <Route path="/update" element={<h1>update Products</h1>} />
+            <Route path="/update/:id" element={<UpdateProduct />} />
             <Route path="/logout" element={<h1>logout </h1>} />
             <Route path="/profile" element={<h1>profile</h1>} />
           </Route>

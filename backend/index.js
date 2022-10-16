@@ -42,4 +42,38 @@ app.get("/products", async (req, res) => {
     res.send({ result: "No Products Found" });
   }
 });
+
+app.delete("/products/:id", async (req, res) => {
+  const result = await Product.deleteOne({ _id: req.params.id });
+  res.send(result);
+});
+
+app.get("/products/:id", async (req, res) => {
+  const result = await Product.findOne({ _id: req.params.id });
+  // res.send(result);
+  if (result) {
+    res.send(result);
+  } else {
+    res.send({ result: "no record found" });
+  }
+});
+
+app.put("/products/:id", async (req, res) => {
+  const result = await Product.updateOne(
+    { _id: req.params.id },
+    { $set: req.body }
+  );
+  res.send(result);
+});
+
+app.get("/search/:key", async (req, res) => {
+  let result = await Product.find({
+    $or: [
+      { name: { $regex: req.params.key } },
+      { company: { $regex: req.params.key } },
+      { category: { $regex: req.params.key } },
+    ],
+  });
+  res.send(result);
+});
 app.listen(5000);

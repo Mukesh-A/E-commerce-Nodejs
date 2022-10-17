@@ -1,19 +1,18 @@
-import React, { useState,useEffect } from "react";
-import {useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     const auth = localStorage.getItem("user");
     if (auth) {
       navigate("/");
       console.log("start");
     }
-  },[]); 
+  }, []);
 
   const Login = async () => {
     console.warn(email, password);
@@ -25,17 +24,18 @@ const Login = () => {
       }),
       headers: {
         "Content-Type": "application/json",
+        authorization: JSON.parse(localStorage.getItem("token")),
       },
     });
-    result = await result.json()
-    if(result.name){
-        localStorage.setItem("user",JSON.stringify(result));
-        navigate("/")
-    }else{
-
+    result = await result.json();
+    if (result.auth) {
+      localStorage.setItem("user", JSON.stringify(result.user));
+      localStorage.setItem("token", JSON.stringify(result.auth));
+      navigate("/");
+    } else {
     }
   };
-  return ( 
+  return (
     <div className="login">
       <h1>Login</h1>
       <input

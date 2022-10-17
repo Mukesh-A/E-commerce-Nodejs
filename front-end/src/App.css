@@ -21,6 +21,7 @@
  margin-top: 100px;
 }
 .inputBox{
+
 display: block;
 padding: 10px;
 margin: 10px;
@@ -56,6 +57,24 @@ border: 1px solid #282c34;
   border: 1px solid gray;
   color: #282c34;
 }
+.products-list ul .delete_btn{
+  cursor: pointer;
+  background-color: rgb(224, 55, 55);
+}
+.products-list ul .update_btn{
+  margin-left: 5px;
+  background-color: rgb(11, 230, 95);
+
+}
+.update_btn .update_btn_link{
+  text-decoration: none;
+  color: black;
+}
+.searchBox{
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
 
 .footer{
   position: absolute;
